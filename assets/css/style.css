@@ -1,0 +1,137 @@
+body {
+  background: #0a0a0a;
+}
+
+:root {
+  --brand: #f10583;
+  --nav-h: 56px; /* h-14 ใน Tailwind = 56px */
+  --gap-top: 16px; /* ช่องว่างที่อยากเว้นระหว่าง navbar กับรูป */
+  --page-bg: #0a0a0a; /* สีพื้นหน้าจอ (ให้ตรงกับ <body class="bg-zinc-900">) */
+}
+
+/* ขนาดโลโก้ใน navbar (สองอันเท่ากัน) */
+:root {
+  --brand-img-h: 36px;
+} /* ปรับขนาดที่นี่ได้ */
+.brand-img {
+  height: var(--brand-img-h);
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.brand-img {
+  height: var(--brand-img-h);
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ————— Navbar ————— */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  color: #d4d4d8;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+.nav-link.is-active {
+  color: #fff;
+}
+.nav-link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 6px;
+  height: 2px;
+  background: #e11d48;
+  border-radius: 9999px;
+}
+.nav-link-mobile {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  color: #e5e7eb;
+  text-decoration: none;
+}
+.nav-link-mobile:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+@supports not (backdrop-filter: blur(4px)) {
+  nav {
+    background: rgba(0, 0, 0, 0.75);
+  }
+}
+
+/* ===== Hero: ภาพพื้นหลังเริ่มต่ำจาก navbar จริง ๆ ===== */
+:root {
+  --nav-h: 56px;
+} /* h-14 ของ navbar */
+.hero {
+  position: relative;
+  /* ให้ฮีโร่สูง = ความสูงหน้าจอ - ความสูงแถบเมนู */
+  min-height: calc(100vh - var(--nav-h));
+  margin: 0;
+  border-radius: 0; /* กันมุมโค้ง/ช่องว่าง */
+  background-image: url("../images/home/cs-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* ถ้า mobile กระตุก ให้คอมเมนต์บรรทัดถัดไป */
+  background-attachment: fixed;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.55)
+  );
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== Badge + เกียร์ชมพู ===== */
+.badge-cog {
+  position: relative;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 6px 20px rgba(0, 0, 0, 0.35);
+}
+.badge-cog__gear {
+  position: absolute;
+  left: -12px;
+  top: -8px;
+  width: 44px;
+  height: 44px;
+  color: var(--brand);
+  filter: drop-shadow(0 0 10px rgba(241, 5, 131, 0.35));
+}
+
+/* โฟกัสคีย์บอร์ด */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgba(241, 5, 131, 0.65);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
+}
+
+/* เพิ่มความลื่นเวลาเลื่อน */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ปรับหัวเรื่องให้แน่น */
+h1 span {
+  letter-spacing: -0.02em;
+}

@@ -1,11 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Science SKRU</title>
-</head>
-<body>
-    <h1>Computer Science</h1>
-</body>
+  <head>
+    <!--ข้อมูลพื้นฐานเว็บ-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="เว็บไซต์ของสาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยราชภัฎสงขลา"
+    />
+    <meta name="author" content="CS SKRU" />
+    <meta
+      name="keywords"
+      content="CS, Computer Science, SKRU, วิทยาการคอมพิวเตอร์, ราชภัฎสงขลา, มหาวิทยาลัยราชภัฎสงขลา, Com-Sci, COM-SCI, 
+    COMPUTER SCIENCE"
+    />
+    <title>SKRU | Computer Science</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/home/cs_logo-removebg.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/home/cs_logo-removebg.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="assets/images/home/cs_logo-removebg.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="assets/images/home/cs_logo-removebg.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="assets/images/home/cs_logo-removebg.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/images/home/cs_logo-removebg.png"
+      type="image/png"
+    />
+
+    <!-- Tailwind CSS-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { brand: { DEFAULT: "#e11d48" } },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-zinc-900 text-zinc-100 antialiased">
+    <!--NAVBAR-->
+    <nav
+      id="navbar"
+      class="sticky top-0 z-50 bg-black/60 backdrop-blur supports-[backdrop-filter]:bg-black/50 border-b border-white/10"
+    >
+      <div class="mx-auto max-w-6xl px-4">
+        <!-- กลับมาแบบเดิม -->
+        <div class="h-14 flex items-center justify-between">
+          <!-- ซ้าย: โลโก้ + ชื่อ -->
+          <a href="index.html" class="flex items-center gap-2">
+            <img
+              src="assets/images/home/skru_logo.png"
+              alt="SKRU"
+              class="brand-img"
+            />
+            <img
+              src="assets/images/home/cs_logo-new.jpg"
+              alt="CS Logo"
+              class="brand-img"
+            />
+            <span class="font-semibold tracking-wide"
+              >SKRU | Computer Science</span
+            >
+          </a>
+
+          <!-- ขวา: เมนู (กลับมาอยู่ในกรอบกลาง ไม่นั่งชิดขอบจอ) -->
+          <ul class="hidden md:flex items-center gap-6">
+            <li><a class="nav-link is-active" href="index.html">Home</a></li>
+            <li><a class="nav-link" href="about.html">About</a></li>
+            <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li><a class="nav-link" href="lecturer.html">Lecturer</a></li>
+          </ul>
+
+          <!-- ปุ่มเมนูมือถือ -->
+          <button
+            id="menuBtn"
+            class="md:hidden p-2 rounded-lg hover:bg-white/5"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            aria-label="Open main menu"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- เมนูมือถือ -->
+        <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
+          <div class="py-3 flex flex-col gap-1">
+            <a class="nav-link-mobile" href="index.html">Home</a>
+            <a class="nav-link-mobile" href="about.html">About</a>
+            <a class="nav-link-mobile" href="gallery.html">Gallery</a>
+            <a class="nav-link-mobile" href="lecturer.html">Lecturer</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO (พื้นหลังรูป เริ่ม "ต่ำกว่านิดนึง" ด้วย mt-4) -->
+    <section class="hero overflow-hidden">
+      <div class="hero-overlay"></div>
+      <div class="hero-content relative max-w-6xl mx-auto px-6 py-16 lg:py-20">
+        <div
+          class="badge-cog inline-flex items-center pl-11 pr-4 py-1.5 rounded-full bg-black/40 border border-white/15 backdrop-blur"
+        >
+          <svg
+            class="badge-cog__gear"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path fill="currentColor" d="..." />
+          </svg>
+          <span class="text-sm font-semibold tracking-wide"
+            >COMSCI เฟืองจิ๋วแห่งปัญญา</span
+          >
+        </div>
+
+        <h1
+          class="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[0.9] uppercase tracking-tight"
+        >
+          <span class="block">Welcome to</span>
+          <span class="block">Computer</span>
+          <span class="block">Science</span>
+        </h1>
+
+        <p class="mt-4 text-zinc-200 text-lg">
+          สร้างสรรค์ ปัญญา พัฒนา เทคโนโลยี
+        </p>
+      </div>
+    </section>
+
+    <!--JS-->
+    <script defer src="assets/js/script.js"></script>
+  </body>
 </html>
